@@ -1,0 +1,11 @@
+{% extends 'todoapp/task_list.html' %} {% block content %}
+<div class="alert alert-danger" role="alert">
+  <h1>ARE YOU SURE YOU WANT TO DELETE THIS TASK</h1>
+</div>
+
+<h6>{{note}}</h6>
+<form method="POST">
+  {% csrf_token %}
+  <input class="btn btn-danger" type="submit" value="Delete" />
+</form>
+{% endblock content %}

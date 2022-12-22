@@ -1,0 +1,9 @@
+{% extends 'todoapp/task_list.html' %} {% block content %}
+<div class="alert alert-success" role="alert">
+  <h1>Create a New Task !</h1>
+</div>
+<form method="POST">
+  {% csrf_token %} {{form.as_p}}
+  <input class="btn btn-success" type="submit" value="Submit" />
+</form>
+{% endblock content %}
