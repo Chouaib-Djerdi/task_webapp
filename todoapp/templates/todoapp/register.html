@@ -1,0 +1,28 @@
+{% extends 'todoapp/main.html' %}
+
+{% block content %}
+
+<h3>Sign Up :</h3>
+
+<div class="card w-50">
+  <div class="card-body">
+    <form method="POST">
+      {% csrf_token %}
+      <label>{{form.username.label}}</label>
+        {{form.username}}
+<br>
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+<br>
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+      <br>
+      <input class="btn btn-primary" type="submit" value="Sign Up">
+    </form>
+    <p class='card-text'>Already have an account? <a href="{% url 'todoapp:login' %}">Login</a></p>
+  </div>
+</div>
+
+{% endblock content %}
+
+
